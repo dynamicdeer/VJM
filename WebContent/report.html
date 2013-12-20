@@ -10,30 +10,52 @@
 		<meta name="author" content="Codrops" />
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 		<link rel="shortcut icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/views_style.css" />
-		<link rel="stylesheet" type="text/css" href="css/views_component.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/report_style.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 		<script src="js/modernizr.custom.js"></script>
 	</head>
 	<body>
-		<div class="container">
+		<div class="drop_container">
 			<header class="clearfix">
-				<span>OFeeldeuk <span class="bp-icon bp-icon-about" data-content="The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration."></span></span>
+				<span>OFeeldeuk <span class="bp-icon bp-icon-about" data-content="OFEELDEUK is the team getting what they want."></span></span>
 				<h1>VJM Report</h1>
 				<nav>
 					<a href="views.html" class="bp-icon bp-icon-prev" data-info="Views"><span>Views</span></a>
 					<a href="index.html" class="bp-icon bp-icon-drop" data-info="Home"><span>Home</span></a>
 				</nav>
-			</header>	
-			<div class="container">
-			<div class="m_body">
-				
+			</header>
+		</div>	
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="tabbable"> 
+						  <ul class="nav nav-tabs">
+						    <li class="active"><a href="#tab1" data-toggle="tab">CPU Usage</a></li>
+						    <li><a href="#tab2" data-toggle="tab">Heap/PermGen</a></li>
+						    <li><a href="#tab3" data-toggle="tab">Threads</a></li>
+						  </ul>
+						  <div class="tab-content">
+						    <div class="tab-pane active" id="tab1">
+						      <p>Excel형식 파일로드1</p>
+						    </div>
+						    <div class="tab-pane" id="tab2">
+						      <p>Excel형식 파일로드2</p>
+						    </div>
+						    <div class="tab-pane" id="tab3">
+						      <p>Excel형식 파일로드3</p>
+						    </div>
+						  </div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		</script>
+		<script src="http://code.jquery.com/jquery.js"></script>
+    	<script src="js/bootstrap.min.js"></script>
 	</body>
-	<div class="container">
+	<div class="drop_container">
 	<footer>
 		<nav>
 			<p> © 2013 VJM By OFEELDEUK <a href="https://github.com/dynamicdeer/VJM"><i class="fa fa-github"></i></a></p>

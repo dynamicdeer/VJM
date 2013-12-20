@@ -24,7 +24,7 @@ body {
 }
 
 a {
-	color: #f0f0f0;
+	color: #95999b;
 	text-decoration: none;
 }
 
@@ -37,6 +37,12 @@ a:hover {
 	max-width: 69em;
 	margin: 0 auto;
 	padding: 2.875em 1.875em 1.875em;
+}
+
+.main {
+	width: 90%;
+	padding: 1em;
+	margin: 0 auto;
 }
 
 .drop_container > header h1 {
@@ -162,24 +168,39 @@ a:hover {
 	content: "\e004";
 }
 
-.row-fluid {
-	margin-bottom : 2em;
+.span12 {
+  	margin-right: auto;
+  	margin-left: auto;	
+  	padding: 1em 1em 1em;
+  	border-bottom: 1px solid #47a3da;
+  	height: 39em;
+  	background: #fff;	
 }
 
-.span4 {
-	padding-left: 1em;
-	color: #fff;
-	background: #47a3da;
-	height: 20em;
+.nav-tabs {
+	border-bottom: 1px solid #47a3da;
 }
 
-.span8 {
-	padding-left: 1em;
-	color: #47a3da;
-	background: #fff;
+.nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus {
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	font-weight: 400;
+    color: #47a3da;
+	cursor: default;
+	background-color: #fff;
 	border: 1px solid #47a3da;
-	height: 20em;
+	border-bottom-color: transparent;
 }
+
+.nav>li>a:hover, .nav>li>a:focus {
+	text-decoration: none;
+	background-color: #47a3da;
+}
+
+a:hover, a:focus {
+	color: #fff;
+	text-decoration: underline;
+}
+
 
 .drop_container > footer {
 	width: 90%;
@@ -200,12 +221,7 @@ a:hover {
 	color: #47a3da;
 }
 
-
 @media screen and (max-width: 55em) {
-	
-	.span4 h1{
-		font-size: 1em;	
-	}
 	
 	.drop_container > header h1,
 	.drop_container > header nav {
