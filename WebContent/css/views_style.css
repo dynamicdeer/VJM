@@ -202,10 +202,16 @@ a:hover {
 
 
 @media screen and (max-width: 55em) {
-	
+
+	.row-fluid .span4 {
+		width: 90%;
+		height: 5em;
+		margin-bottom: 2em;
+	}
 	.span4 h1{
 		font-size: 1em;	
 	}
+	
 	
 	.drop_container > header h1,
 	.drop_container > header nav {
