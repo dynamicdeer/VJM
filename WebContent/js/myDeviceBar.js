@@ -4,60 +4,35 @@ $(function () {
                 type: 'bar'
             },
             title: {
-                text: 'Historic World Population by Region'
-            },
-            subtitle: {
-                text: 'Source: Wikipedia.org'
+                text: 'Stacked bar chart'
             },
             xAxis: {
-                categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
-                title: {
-                    text: null
-                }
+                categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
             },
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Population (millions)',
-                    align: 'high'
-                },
-                labels: {
-                    overflow: 'justify'
-                }
-            },
-            tooltip: {
-                valueSuffix: ' millions'
-            },
-            plotOptions: {
-                bar: {
-                    dataLabels: {
-                        enabled: true
-                    }
+                    text: 'Total fruit consumption'
                 }
             },
             legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'top',
-                x: -40,
-                y: 100,
-                floating: true,
-                borderWidth: 1,
                 backgroundColor: '#FFFFFF',
-                shadow: true
+                reversed: true
             },
-            credits: {
-                enabled: false
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
             },
-            series: [{
-                name: 'Year 1800',
-                data: [107, 31, 635, 203, 2]
+                series: [{
+                name: 'John',
+                data: [5, 3, 4, 7, 2]
             }, {
-                name: 'Year 1900',
-                data: [133, 156, 947, 408, 6]
+                name: 'Jane',
+                data: [2, 2, 3, 2, 1]
             }, {
-                name: 'Year 2008',
-                data: [973, 914, 4054, 732, 34]
+                name: 'Joe',
+                data: [3, 4, 4, 2, 5]
             }]
         });
     });

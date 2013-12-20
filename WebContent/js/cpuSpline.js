@@ -4,10 +4,10 @@ $(function () {
                 type: 'spline'
             },
             title: {
-                text: 'Wind speed during two days'
+                text: ''
             },
             subtitle: {
-                text: 'October 6th and 7th 2009 at two locations in Vik i Sogn, Norway'
+                text: ''
             },
             xAxis: {
                 type: 'datetime'
