@@ -15,6 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/ui.totop2.css">
 		<script src="js/modernizr.custom.js"></script>
 	</head>
 	<body>
@@ -54,7 +55,15 @@
 					</div>
 				</div>
 			</div>
-		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+		<script src="js/easing.js" type="text/javascript"></script>
+		<script src="js/jquery.ui.totop2.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$().UItoTop2({ easingType: 'easeOutQuart' });
+		});
+		</script>
+		<a href="#" id="toTop2" style="display: inline;"><span id="toTopHover2"></span>To Top</a>
     	<script src="js/bootstrap.min.js"></script>
     	<script src="js/myDeviceBar.js"></script>
     	<script src="js/cpuSpline.js"></script>
