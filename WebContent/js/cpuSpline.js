@@ -1,136 +1,78 @@
 $(function () {
+    $(document).ready(function() {
+        Highcharts.setOptions({
+            global: {
+                useUTC: false
+            }
+        });
+    
+        var chart;
         $('#cpu').highcharts({
             chart: {
-                type: 'spline'
+                type: 'spline',
+                animation: Highcharts.svg, // don't animate in old IE
+                marginRight: 10,
+                events: {
+                    load: function() {
+    
+                        // set up the updating of the chart each second
+                        var series = this.series[0];
+                        setInterval(function() {
+                            var x = (new Date()).getTime(), // current time
+                                y = Math.random();
+                            series.addPoint([x, y], true, true);
+                        }, 1000);
+                    }
+                }
             },
             title: {
-                text: ''
-            },
-            subtitle: {
-                text: ''
+                text: 'CPU Usage'
             },
             xAxis: {
-                type: 'datetime'
+                type: 'datetime',
+                tickPixelInterval: 100
             },
             yAxis: {
                 title: {
-                    text: 'Wind speed (m/s)'
+                    text: ''
                 },
-                min: 0,
-                minorGridLineWidth: 0,
-                gridLineWidth: 0,
-                alternateGridColor: null,
-                plotBands: [{ // Light air
-                    from: 0.3,
-                    to: 1.5,
-                    color: 'rgba(68, 170, 213, 0.1)',
-                    label: {
-                        text: 'Light air',
-                        style: {
-                            color: '#606060'
-                        }
-                    }
-                }, { // Light breeze
-                    from: 1.5,
-                    to: 3.3,
-                    color: 'rgba(0, 0, 0, 0)',
-                    label: {
-                        text: 'Light breeze',
-                        style: {
-                            color: '#606060'
-                        }
-                    }
-                }, { // Gentle breeze
-                    from: 3.3,
-                    to: 5.5,
-                    color: 'rgba(68, 170, 213, 0.1)',
-                    label: {
-                        text: 'Gentle breeze',
-                        style: {
-                            color: '#606060'
-                        }
-                    }
-                }, { // Moderate breeze
-                    from: 5.5,
-                    to: 8,
-                    color: 'rgba(0, 0, 0, 0)',
-                    label: {
-                        text: 'Moderate breeze',
-                        style: {
-                            color: '#606060'
-                        }
-                    }
-                }, { // Fresh breeze
-                    from: 8,
-                    to: 11,
-                    color: 'rgba(68, 170, 213, 0.1)',
-                    label: {
-                        text: 'Fresh breeze',
-                        style: {
-                            color: '#606060'
-                        }
-                    }
-                }, { // Strong breeze
-                    from: 11,
-                    to: 14,
-                    color: 'rgba(0, 0, 0, 0)',
-                    label: {
-                        text: 'Strong breeze',
-                        style: {
-                            color: '#606060'
-                        }
-                    }
-                }, { // High wind
-                    from: 14,
-                    to: 15,
-                    color: 'rgba(68, 170, 213, 0.1)',
-                    label: {
-                        text: 'High wind',
-                        style: {
-                            color: '#606060'
-                        }
-                    }
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
                 }]
             },
             tooltip: {
-                valueSuffix: ' m/s'
-            },
-            plotOptions: {
-                spline: {
-                    lineWidth: 4,
-                    states: {
-                        hover: {
-                            lineWidth: 5
-                        }
-                    },
-                    marker: {
-                        enabled: false
-                    },
-                    pointInterval: 3600000, // one hour
-                    pointStart: Date.UTC(2009, 9, 6, 0, 0, 0)
+                formatter: function() {
+                        return '<b>'+ this.series.name +'</b><br/>'+
+                        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) +'<br/>'+
+                        Highcharts.numberFormat(this.y, 2);
                 }
+            },
+            legend: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
             },
             series: [{
-                name: 'Hestavollane',
-                data: [4.3, 5.1, 4.3, 5.2, 5.4, 4.7, 3.5, 4.1, 5.6, 7.4, 6.9, 7.1,
-                    7.9, 7.9, 7.5, 6.7, 7.7, 7.7, 7.4, 7.0, 7.1, 5.8, 5.9, 7.4,
-                    8.2, 8.5, 9.4, 8.1, 10.9, 10.4, 10.9, 12.4, 12.1, 9.5, 7.5,
-                    7.1, 7.5, 8.1, 6.8, 3.4, 2.1, 1.9, 2.8, 2.9, 1.3, 4.4, 4.2,
-                    3.0, 3.0]
+                name: 'Random data',
+                data: (function() {
+                    // generate an array of random data
+                    var data = [],
+                        time = (new Date()).getTime(),
+                        i;
     
-            }, {
-                name: 'Voll',
-                data: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.3, 0.0,
-                    0.0, 0.4, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                    0.0, 0.6, 1.2, 1.7, 0.7, 2.9, 4.1, 2.6, 3.7, 3.9, 1.7, 2.3,
-                    3.0, 3.3, 4.8, 5.0, 4.8, 5.0, 3.2, 2.0, 0.9, 0.4, 0.3, 0.5, 0.4]
+                    for (i = -19; i <= 0; i++) {
+                        data.push({
+                            x: time + i * 1000,
+                            y: Math.random()
+                        });
+                    }
+                    return data;
+                })()
             }]
-            ,
-            navigation: {
-                menuItemStyle: {
-                    fontSize: '10px'
-                }
-            }
         });
     });
     
+});
