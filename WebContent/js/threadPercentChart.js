@@ -40,9 +40,6 @@ $(function () {
         title: {
             text: 'Thread'
         },
-        subtitle: {
-            text: 'by Ofeeldeuk'
-        },
         xAxis: {
         	tickmarkPlacement: 'on',
             title:{
