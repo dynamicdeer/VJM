@@ -10,19 +10,19 @@ a:hover {
 }
 
 body {
-    font-family: 'Lato', Calibri, Arial, sans-serif;
-    color: #fff;
-    background: #47a3da;
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	color: #fff;
+	background: #47a3da;
 }
 
-.drop_container > header {
+.drop_container>header {
 	width: 90%;
 	max-width: 69em;
 	margin: 0 auto;
 	padding: 2.875em 1.875em 1.875em;
 }
 
-.drop_container > header h1 {
+.drop_container>header h1 {
 	font-size: 4em;
 	line-height: 1.3;
 	margin: 0 0 0.6em 0;
@@ -30,24 +30,32 @@ body {
 	font-weight: 400;
 }
 
-.drop_container .span12 {
-	background :  #fff;
+form {
+	margin-top: 3em;
+	height: 32em;
+	background: #fff;
 	color: #47a3da;
-	height :  33em;
 }
 
-.drop_container > footer {
+.drop_container>footer {
 	width: 90%;
 	max-width: 69em;
 	margin: 0 auto;
-	margin-top : 2em;
+	margin-top: 2em;
 	margin-bottom: 100px;
 	padding: 1em 1.875em 1.875em;
 }
 
-.drop_container > footer nav {
+.drop_container>footer nav {
 	float: right;
 	text-align: center;
+}
+
+[class*="span"] {
+	float: left;
+	min-height: 1px;
+	margin-left: 30px;
+	margin-top: 30px;
 }
 
 .fa {
@@ -55,25 +63,17 @@ body {
 	color: #fff;
 }
 
-
 @media screen and (max-width: 55em) {
-
-	.drop_container > header h1,
-	.drop_container > header nav {
+	.drop_container>header h1,.drop_container>header nav {
 		float: none;
 	}
-
-	.drop_container > header > span,
-	.drop_container > header h1 {
+	.drop_container>header>span,.drop_container>header h1 {
 		text-align: center;
 	}
-
-	.drop_container > header nav {
+	.drop_container>header nav {
 		margin: 0 auto;
 	}
-
-	.drop_container > header > span {
+	.drop_container>header>span {
 		text-indent: 30px;
 	}
 }
-
