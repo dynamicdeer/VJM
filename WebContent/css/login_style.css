@@ -44,6 +44,10 @@ body {
 	height :  25em;
 }
 
+.span4 {
+	color: #47a3da;
+}
+
 
 .drop_container > footer {
 	width: 90%;
