@@ -18,7 +18,6 @@ body, html { font-size: 100%; padding: 0; margin: 0;}
 .a_clearfix:before, .a_clearfix:after { content: " "; display: table; }
 .a_clearfix:after { clear: both; }
 
-
 body {
     font-family: 'Lato', Calibri, Arial, sans-serif;
     color: #fff;
@@ -27,7 +26,7 @@ body {
 
 a {
 	color: #f0f0f0;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 a:hover {
