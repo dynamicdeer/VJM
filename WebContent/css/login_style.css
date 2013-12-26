@@ -18,6 +18,15 @@ body, html { font-size: 100%; padding: 0; margin: 0;}
 .a_clearfix:before, .a_clearfix:after { content: " "; display: table; }
 .a_clearfix:after { clear: both; }
 
+a {
+	color: #fff;
+}
+
+a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
 body {
     font-family: 'Lato', Calibri, Arial, sans-serif;
     color: #fff;
