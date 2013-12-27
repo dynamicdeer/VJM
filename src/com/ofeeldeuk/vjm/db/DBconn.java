@@ -1,4 +1,4 @@
-package util.dbhelper;
+package com.ofeeldeuk.vjm.db;
 
 import java.sql.*;
 
