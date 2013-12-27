@@ -1,77 +1,85 @@
 <!DOCTYPE html>
 <html lang="ko" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>VJM</title>
-		<meta name="description" content="VJM" />
-		<meta name="keywords"
-			content="on scroll, effect, slide in, layout, template, transition, javascript" />
-		<meta name="author" content="Codrops" />
-		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-		<link rel="shortcut icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="css/login_style.css" />
-		<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
-		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-		<script src="js/modernizr.custom.js"></script>
-	</head>
-	<body>
-		<div class="drop_container">
-			<header class="a_clearfix">
-				<h1>VJM Login / Signup</h1>
-				<nav>
-					<a href="index.html" class="bp-icon bp-icon-drop" data-info="Home"><span>Home</span></a>
-				</nav>
-			</header>
-			<form>
-				<div class="container">
-					<div class="span12">
-						<div class="span5">
-							<div class="controls">
-								<input type="text" id="inputEmail" placeholder="Email">
-							</div>
-							<div class="controls">
-								<input type="password" id="inputPassword" placeholder="Password">
-							</div>
-							<div class="control-group">
-								<div class="controls">
-									<label class="checkbox"> <input type="checkbox">Remember
-										me
-									</label> <input class="btn btn-primary" type="submit" name="commit"
-										value="Log in" />
-								</div>
-							</div>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VJM</title>
+<meta name="description" content="VJM" />
+<meta name="keywords"
+	content="on scroll, effect, slide in, layout, template, transition, javascript" />
+<meta name="author" content="Codrops" />
+<link
+	href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+	rel="stylesheet">
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="css/login_style.css" />
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+<script src="js/modernizr.custom.js"></script>
+</head>
+<body>
+	<div class="drop_container">
+		<header class="a_clearfix">
+			<h1>VJM Login / Signup</h1>
+			<nav>
+				<a href="index.html" class="bp-icon bp-icon-drop" data-info="Home"><span>Home</span></a>
+			</nav>
+		</header>
+
+		<div class="container">
+			<div class="span12">
+
+				<form name="form1" method="post" action="jsp/select_login.jsp">
+					<div class="span5">
+						<div class="controls">
+							<input type="text" id="inputEmail" name="email" placeholder="Email">
 						</div>
-						<div class="span5">
-							<div class="controls">
-								<input type="text" id="inputId" placeholder="Name">
-							</div>
-							<div class="controls">
-								<input type="text" id="inputName" placeholder="Email">
-							</div>
-							<div class="controls">
-								<input type="password" id="inputPassword" placeholder="Password">
-							</div>
-	
-							<button type="button" class="btn btn-success">Create New
-								Account</button>
+						<div class="controls">
+							<input type="password" id="inputPassword" name="password" placeholder="Password">
+						</div>
+						<div class="controls">
+							<input type="submit" class="btn btn-primary" value="Logins" />
 						</div>
 					</div>
-				</div>
-			</form>
+				</form>
+
+				<form name="form2" method="post" action="jsp/insert_create.jsp">
+					<div class="span5">
+						<div class="controls">
+							<input type="text" id="name" name="name" placeholder="Name">
+						</div>
+						<div class="controls">
+							<input type="text" id="email" name="email" placeholder="Email">
+						</div>
+						<div class="controls">
+							<input type="password" id="password" name="password"
+								placeholder="Password">
+						</div>
+						<input class="btn btn-success" type="submit" name="commit"
+							value="Create" />
+						<!--  
+							<button type="button" class="btn btn-success">
+								Account</button>
+								-->
+					</div>
+				</form>
+
+			</div>
 		</div>
-		<script src="js/bootstrap.js"></script>
-	</body>
-	<div class="drop_container">
-		<footer>
-			<nav>
-				<p>
-					© 2013 VJM By OFEELDEUK <a href="https://github.com/dynamicdeer/VJM"><i
-						class="fa fa-github"></i></a>
-				</p>
-			</nav>
-		</footer>
+
 	</div>
+	<script src="js/bootstrap.js"></script>
+</body>
+<div class="drop_container">
+	<footer>
+		<nav>
+			<p>
+				© 2013 VJM By OFEELDEUK <a href="https://github.com/dynamicdeer/VJM"><i
+					class="fa fa-github"></i></a>
+			</p>
+		</nav>
+	</footer>
+</div>
 </html>
