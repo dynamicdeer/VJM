@@ -25,9 +25,12 @@
 	
 	// 존재하면 if , 존재하지 않으면 else if
 	if(rs.next()){
-		out.println("사용중인 이메일입니다.");
-		response.sendRedirect("../login.html");
-		
+		%>
+		<script>
+		alert("이미 등록된 이메일 입니다.");
+		history.go(-1);
+		</script>
+		<%
 	}else{
 		preSql = "insert into users ( name, email, password) values ( ?, ?, ?)";
 		pstmt = conn.prepareStatement(preSql);

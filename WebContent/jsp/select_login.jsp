@@ -14,6 +14,7 @@
 	Connection conn = DBconn.getConnection();
 	
 	request.setCharacterEncoding("utf-8");
+	String name = request.getParameter("name");
 	String email = request.getParameter("email");
 	String password = request.getParameter("password");
 	
@@ -27,9 +28,16 @@
 	
 	// 존재하면 if , 존재하지 않으면 else if
 	if(rs.next()){
+		session.setAttribute("MEMBERNAME", name);
 		response.sendRedirect("../views.html");
 	}else{
-		response.sendRedirect("../login.html");
+		%>
+		<script>
+		alert("로그인에 실패 했습니다.");
+		history.go(-1);
+		</script>
+		<%
+	//	response.sendRedirect("../login.html");
 	}
 	
 	DBconn.close();

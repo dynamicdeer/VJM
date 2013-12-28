@@ -10,21 +10,32 @@
 </head>
 <body>
 	<%
-		Connection conn = DBconn.getConnection();
-
-		request.setCharacterEncoding("utf-8");
-		String name = "Choi";
-		String email = "Hyun@naver.com";//request.getParameter("email");
-		String passwd = "bin123";//request.getParameter("passwd");
-
-		String preSql = "insert into users ( name, email, password) values ( ?, ?, ?)";
-		PreparedStatement pstmt = conn.prepareStatement(preSql);
-		pstmt.setString(1, name);
-		pstmt.setString(2, email);
-		pstmt.setString(3, passwd);
-		pstmt.executeUpdate();
+		String membername = (String)session.getAttribute("MEMBERNAME");
+		boolean login = membername == null ? false : true;
 		
-		out.println(name + " 님 환영합니다.");
+		if(login){
+			%>	
+			아이디 "<%= membername %>"로 로그인한 상태		
+		<%
+		}else {
+			%>
+			로그인 하지 않은 상태 
+		<%
+		}
+		
+//		request.setCharacterEncoding("utf-8");
+//		String name = "Choi";
+//		String email = "Hyun@naver.com";//request.getParameter("email");
+//		String passwd = "bin123";//request.getParameter("passwd");
+
+//		String preSql = "insert into users ( name, email, password) values ( ?, ?, ?)";
+//		PreparedStatement pstmt = conn.prepareStatement(preSql);
+//		pstmt.setString(1, name);
+//		pstmt.setString(2, email);
+//		pstmt.setString(3, passwd);
+//		pstmt.executeUpdate();
+		
+//		out.println(name + " 님 환영합니다.");
 	%>
 </body>
 </html>
