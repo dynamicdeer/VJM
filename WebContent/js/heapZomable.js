@@ -2,7 +2,18 @@ $(function () {
         $('#heap').highcharts({
         	chart: {
                 zoomType: 'x',
-                spacingRight: 20
+                spacingRight: 20,
+                events: {
+                    load: function() {
+                        // set up the updating of the chart each second
+                        var series = this.series[0];
+                        setInterval(function() {
+                            var x = (new Date()).getTime(), // current time
+                                y = Math.random()*100;
+                            series.addPoint([x, y], true, true);
+                        }, 1000);
+                    }
+                }
             },
             title: {
                 text: 'USD to EUR exchange rate from 2006 through 2008'
@@ -14,7 +25,6 @@ $(function () {
             },
             xAxis: {
                 type: 'datetime',
-                maxZoom: 14 * 24 * 3600000, // fourteen days millsecond
                 title: {
                     text: null
                 }
@@ -58,7 +68,20 @@ $(function () {
                 name: 'USD to EUR',
                 pointInterval: 24 * 3600 * 1000,
                 pointStart: Date.UTC(2013, 12, 23),
-                data: [ 0.7971, 0.7324, 0.6921, 0.85 ]
+                data: (function() {
+                    // generate an array of random data
+                    var data = [],
+                        time = (new Date()).getTime(),
+                        i;
+    
+                    for (i = -19; i <= 0; i++) {
+                        data.push({
+                            x: time + i * 1000,
+                            y: Math.random()*100
+                        });
+                    }
+                    return data;
+                })()
             }]
         });
     });

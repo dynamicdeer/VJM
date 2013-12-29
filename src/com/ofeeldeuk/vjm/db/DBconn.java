@@ -8,7 +8,7 @@ public class DBconn {
 	public static Connection getConnection() throws ClassNotFoundException, SQLException{
 		if(dbConn  == null){
 			String driverName="com.mysql.jdbc.Driver";
-			String url = "jdbc:mysql://localhost:3306/vjm";
+			String url = "jdbc:mysql://localhost:3306/vms";
 			String id = "root";
 			String pwd = "1234";
 			

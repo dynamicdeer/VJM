@@ -14,6 +14,7 @@ public class HeapTest {
 		SaveHeapInfo SHInfo = new SaveHeapInfo();
 		DoublePoint Dpoint = new DoublePoint();
 		ReadXmlAdd RXA = new ReadXmlAdd();
+		SaveXml SX = new SaveXml();
 
 		Scanner sc = new Scanner(System.in);
 
@@ -44,8 +45,8 @@ public class HeapTest {
 			
 			System.out.println("Heap Per : " + HPSource.getHper());
 			SHInfo.SaveHeapInfos(HPSource.getHper());
-			RXA.xmlAdd(HPSource.getHper());
-			
+//			RXA.xmlAdd(HPSource.getHper());
+			SX.xmlAdd(HPSource.getHper());
 		}
 			
 //		if (HJSource.getPid() != null) {

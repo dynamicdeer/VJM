@@ -47,7 +47,7 @@ $(function () {
                 enabled: false
                 },
             type: 'datetime',
-            tickPixelInterval: 150,
+            tickPixelInterval: 100,
         },
 
         yAxis: {
