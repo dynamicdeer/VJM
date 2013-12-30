@@ -21,7 +21,7 @@ public class ReadXmlAdd {
 
 	void xmlAdd(double heap) {
 		try {
-			String name = "C:\\Users\\bit\\Desktop\\project\\Project\\HeapInfo.xml";
+			String name = "HeapInfo.xml";
 			boolean isDir = (new File(name)).isDirectory();
 			if (isDir == false) {
 				// String str = "HeapPer = " + heapPer+
@@ -43,10 +43,6 @@ public class ReadXmlAdd {
 				}
 
 				for (int i = 0; i < List.size(); i++) {
-					System.out.println(List.get(i));
-				}
-
-				for (int i = 0; i < List.size(); i++) {
 					if (List.get(i).equals("</heapinfo>")) {
 						saveStr = List.get(i);
 						List.remove(i);
@@ -55,9 +51,6 @@ public class ReadXmlAdd {
 				List.add(str);
 				List.add(saveStr);
 
-				for (int i = 0; i < List.size(); i++) {
-					System.out.println(List.get(i));
-				}
 				OutputStream out = new FileOutputStream(name);
 				for (int i = 0; i < List.size(); i++) {
 					String str3 = List.get(i)
@@ -76,7 +69,7 @@ public class ReadXmlAdd {
 						+ System.getProperty("line.separator") + "<heapinfo>"
 						+ System.getProperty("line.separator") + "\t<heap>"
 						+ System.getProperty("line.separator")
-						+ "\t\t<value>0</value>"
+						+ "\t\t<value>" + heap + "</value>"
 						+ System.getProperty("line.separator") + "\t</heap>"
 						+ System.getProperty("line.separator") + "</heapinfo>"
 						+ System.getProperty("line.separator");

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+				$.ajax({
+					//contentType을 지정해줘야 합니다.
+					contentType : "application/xml",
+					url : "../HeapInfo2.xml",
+					success : function(xml) {
+						//xml을 jQuery로 감싸고 sample 노드를 찾 은 후 name 노드의 값을 반환
+						name = $(xml).find("heapinfo").find("heap").find("value").text();
+						//알림 메세지
+						alert(name);
+
+					},
+					error : function() {
+						alert("에러 asdasd발생");
+					}
+				});
+			});
+</script>
+</head>
+<body>
+</body>
+</html>

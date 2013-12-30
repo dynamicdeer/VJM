@@ -20,8 +20,9 @@ public class SaveXml {
 
 	void xmlAdd(double heap) {
 		try {
-			OutputStream out = new FileOutputStream("HeapInfo2.xml");
-			String str = "<?xml version=" + "\"1.0\"" + "encoding="
+			String name = "C:\\Users\\bit\\git\\VJM\\WebContent\\HeapInfo2.xml ";
+			OutputStream out = new FileOutputStream(name);
+			String str = "<?xml version=" + "\"1.0\"" + " encoding="
 					+ "\"utf-8\"?" + ">" + System.getProperty("line.separator")
 					+ "<heapinfo>" + System.getProperty("line.separator")
 					+ "\t<heap>" + System.getProperty("line.separator")

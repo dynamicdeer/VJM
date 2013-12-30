@@ -22,11 +22,11 @@ $(function () {
 
                     setInterval(function() {
                         var x = (new Date()).getTime(), // current time
-                            y = Math.random();
-                            z = Math.random();
-                            a = Math.random();
-                            b = Math.random();
-                            c = Math.random();
+                            y = (Math.random()*10)+30;
+                            z = (Math.random()*20)+50;
+                            a = (Math.random()*5)+20;
+                            b = Math.random()*0.8;
+                            c = Math.random()*0.1;
                         series.addPoint([x, y], false, true);
                         series2.addPoint([x,z], false, true);
                         series3.addPoint([x,a], false, true);
@@ -47,7 +47,7 @@ $(function () {
                 enabled: false
                 },
             type: 'datetime',
-            tickPixelInterval: 100,
+            tickPixelInterval: 150,
         },
 
         yAxis: {
@@ -62,7 +62,7 @@ $(function () {
         },
 
         tooltip: {
-            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b> ({point.y:,.0f} millions)<br/>',
+            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b> ({point.y:,.0f})<br/>',
             shared: true
         },
         plotOptions: {
@@ -78,7 +78,7 @@ $(function () {
         },
 
         series: [{
-            name: 'TooltipLevel1',
+            name: 'Runnable',
             data: (function() {
                 // generate an array of random data
                 var data = [],
@@ -88,14 +88,14 @@ $(function () {
                 for (i = -19; i <= 0; i++) {
                     data.push({
                         x: time + i * 1000,
-                        y: Math.random()
+                        y: (Math.random()*10)+30
                     });
                 }
                 return data;
             })()
         },
         {
-            name: 'TooltipLevel2',
+            name: 'Waiting',
             data: (function() {
                 // generate an array of random data
                 var data = [],
@@ -105,14 +105,14 @@ $(function () {
                 for (i = -19; i <= 0; i++) {
                     data.push({
                         x: time + i * 1000,
-                        y: Math.random()
+                        y: (Math.random()*20)+50
                     });
                 }
                 return data;
             })()
         },
         {
-            name: 'TooltipLevel3',
+            name: 'Sleeping',
             data: (function() {
                 // generate an array of random data
                 var data = [],
@@ -122,14 +122,14 @@ $(function () {
                 for (i = -19; i <= 0; i++) {
                     data.push({
                         x: time + i * 1000,
-                        y: Math.random()
+                        y: (Math.random()*5)+20
                     });
                 }
                 return data;
                 })()
         },
         {
-        	name: 'TooltipLevel4',
+        	name: 'Blocked',
         	data: (function() {
         		// generate an array of random data
         		var data = [],
@@ -139,14 +139,14 @@ $(function () {
         		for (i = -19; i <= 0; i++) {
         			data.push({
         				x: time + i * 1000,
-        				y: Math.random()
+        				y: Math.random()*0.8
         			});
         		}
         		return data;
         	})()
         },
         {
-        	name: 'TooltipLevel5',
+        	name: 'Terminated',
         	data: (function() {
         		// generate an array of random data
         		var data = [],
@@ -156,7 +156,7 @@ $(function () {
         		for (i = -19; i <= 0; i++) {
         			data.push({
         				x: time + i * 1000,
-        				y: Math.random()
+        				y: Math.random()*0.5
         			});
         		}
         		return data;

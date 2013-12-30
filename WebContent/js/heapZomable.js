@@ -16,12 +16,7 @@ $(function () {
                 }
             },
             title: {
-                text: 'USD to EUR exchange rate from 2006 through 2008'
-            },
-            subtitle: {
-                text: document.ontouchstart === undefined ?
-                    'Click and drag in the plot area to zoom in' :
-                    'Pinch the chart to zoom in'
+                text: 'Heap Usage'
             },
             xAxis: {
                 type: 'datetime',
@@ -67,17 +62,31 @@ $(function () {
                 type: 'area',
                 name: 'USD to EUR',
                 pointInterval: 24 * 3600 * 1000,
-                pointStart: Date.UTC(2013, 12, 23),
+                pointStart: Date.UTC(2013, 12, 30),
                 data: (function() {
+                	
+                	
                     // generate an array of random data
                     var data = [],
-                        time = (new Date()).getTime(),
-                        i;
+                        time = (new Date()).getTime(),i;
     
                     for (i = -19; i <= 0; i++) {
+                    	$.ajax({
+                    		contentType : "application/xml",
+        					url : "HeapInfo2.xml",
+        					success : function(xml) {
+        						//xml을 jQuery로 감싸고 sample 노드를 찾 은 후 name 노드의 값을 반환
+        						name = $(xml).find("heapinfo").find("heap").find("value").text();
+        						//알림 메세지
+//        						alert(name);
+
+        					}
+                    	});
+                    	
                         data.push({
                             x: time + i * 1000,
                             y: Math.random()*100
+                            	//name
                         });
                     }
                     return data;

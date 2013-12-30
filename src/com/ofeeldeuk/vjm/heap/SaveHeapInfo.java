@@ -10,24 +10,30 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class SaveHeapInfo {
-	SimpleDateFormat formatter = new SimpleDateFormat("yyyy : MM : dd : HH:mm:ss ");
-	Calendar rightNow = Calendar.getInstance();
-	String currentDate = formatter.format(rightNow.getTime());
+	SimpleDateFormat formatter = new SimpleDateFormat("yyyy : MM : dd");
+	SimpleDateFormat formatter2 = new SimpleDateFormat("HH : mm : ss");
+
 	
 	int count = 0;
 	
 	void SaveHeapInfos(double heapPer) throws IOException {
 		try {
+			Calendar rightNow = Calendar.getInstance();
+			String currentDate = formatter.format(rightNow.getTime());
+			String currentDate2 = formatter2.format(rightNow.getTime());
+			
 			// if(fileIsLive(makeFile))
 			// makeFile 은 String 형태
-
-			String name = "C:\\Users\\bit\\Desktop\\project\\Project\\HeapInfo.txt";
+			//C:\Users\bit\git\VJM\WebContent\info
+			//String name = "C:\\Users\\bit\\git\\VJM\\WebContent\\info\\HeapInfo.txt";
+			//String name = "C:\\Users\\bit\\Desktop\\project\\Project\\HeapInfo.txt";
+			String name = "HeapInfo.txt";
 			boolean isDir = (new File(name)).isDirectory();
 			if (isDir == false) {
-				String str = "HeapPer = " + heapPer+ System.getProperty("line.separator");
+				String str = "<" + currentDate2 + "> HeapPer = " + heapPer+ System.getProperty("line.separator");
 				
 				if(count == 0){
-					str = currentDate + System.getProperty("line.separator") + "HeapPer = " + heapPer+ System.getProperty("line.separator");
+					str = currentDate + System.getProperty("line.separator") + "<" + currentDate2 + "> HeapPer = "+ heapPer+ System.getProperty("line.separator");
 					count++;
 				}
 				
